@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitiesManager.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231218102853_Initial")]
-    partial class Initial
+    [Migration("20231218163830_Initial8")]
+    partial class Initial8
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace CitiesManager.WebAPI.Migrations
 
                     b.Property<string>("CityName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CountryID")
+                        .HasColumnType("int");
 
                     b.HasKey("CityID");
 
