@@ -39,7 +39,8 @@ namespace CitiesManager.WebAPI.Controllers
 
    if (city == null)
    {
-    return NotFound();
+    return Problem(detail: "Invalid CityID", statusCode: 400, title: "City Search");
+    //return BadRequest();
    }
 
    return city;
@@ -94,7 +95,7 @@ namespace CitiesManager.WebAPI.Controllers
    _context.Cities.Add(city);
    await _context.SaveChangesAsync();
 
-   return CreatedAtAction("GetCity", new { cityID = city.CityID }, city); //api/Cities/67d28f3d-43eb-49c7-916c-5b39172955e5
+   return CreatedAtAction("GetCity", new { cityID = city.CityID }, city); //Eg: Location: api/Cities/67d28f3d-43eb-49c7-916c-5b39172955e5
   }
 
 
