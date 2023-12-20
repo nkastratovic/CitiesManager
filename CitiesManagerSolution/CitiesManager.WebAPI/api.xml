@@ -16,17 +16,5 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:CitiesManager.WebAPI.Migrations.SqlServerMigrations.Initial">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.WebAPI.Migrations.SqlServerMigrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.WebAPI.Migrations.SqlServerMigrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.WebAPI.Migrations.SqlServerMigrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
     </members>
 </doc>
