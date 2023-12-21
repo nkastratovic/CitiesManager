@@ -10,21 +10,27 @@ using CitiesManager.Core.Models;
 
 namespace CitiesManager.WebAPI.Controllers.v1
 {
+ /// <summary>
+ /// 
+ /// </summary>
  [ApiVersion("1.0")]
  public class CitiesController : CustomControllerBase
  {
   private readonly ApplicationDbContext _context;
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="context"></param>
   public CitiesController(ApplicationDbContext context)
   {
    _context = context;
   }
 
-  // GET: api/Cities
   /// <summary>
   /// To get list of cities (including city ID and city name) from 'cities' table
   /// </summary>
-  /// <returns></returns>
+  /// <returns></returns>  // GET: api/Cities
   [HttpGet]
   //[Produces("application/xml")]
   public async Task<ActionResult<IEnumerable<City>>> GetCities()
@@ -35,6 +41,11 @@ namespace CitiesManager.WebAPI.Controllers.v1
   }
 
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="cityID"></param>
+  /// <returns></returns>
   // GET: api/Cities/5
   [HttpGet("{cityID}")]
   public async Task<ActionResult<City>> GetCity(Guid cityID)
@@ -51,6 +62,12 @@ namespace CitiesManager.WebAPI.Controllers.v1
   }
 
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="cityID"></param>
+  /// <param name="city"></param>
+  /// <returns></returns>
   // PUT: api/Cities/5
   [HttpPut("{cityID}")]
   public async Task<IActionResult> PutCity(Guid cityID, [Bind(nameof(City.CityID), nameof(City.CityName))] City city)
@@ -88,6 +105,11 @@ namespace CitiesManager.WebAPI.Controllers.v1
   }
 
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="city"></param>
+  /// <returns></returns>
   // POST: api/Cities
   [HttpPost]
   public async Task<ActionResult<City>> PostCity([Bind(nameof(City.CityID), nameof(City.CityName))] City city)
@@ -108,6 +130,11 @@ namespace CitiesManager.WebAPI.Controllers.v1
   }
 
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="id"></param>
+  /// <returns></returns>
   // DELETE: api/Cities/5
   [HttpDelete("{id}")]
   public async Task<IActionResult> DeleteCity(Guid id)
