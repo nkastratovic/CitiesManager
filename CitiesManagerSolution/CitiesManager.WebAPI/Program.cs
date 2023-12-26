@@ -43,13 +43,19 @@ builder.Services.AddApiVersioning(config =>
  config.AssumeDefaultVersionWhenUnspecified = true;
 });
 
-
-
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+var provider = builder.Configuration.GetValue("DbProvider", "SqlServer");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
- options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+
+ if (provider == "PostgreSql")
+ options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnectionString")).UseSnakeCaseNamingConvention();
+ else if(provider == "Sqlite")
+  options.UseSqlite(builder.Configuration.GetConnectionString("SqliteDataSource"));
+ else
+  options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnectionString"));
 });
+
 
 
 //Swagger
