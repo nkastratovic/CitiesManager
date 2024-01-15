@@ -91,7 +91,7 @@ builder.Services.AddSwaggerGen(options => {
                 }
             }, new string[]{}
         }
-    })
+    });
 
 }); //generates OpenAPI specification
 
