@@ -22,20 +22,20 @@ EF Migrations
 
 SqlServer
 
-Add-Migration Initial -Context SqlServerDbContext -OutputDir SqlServerDbMigrations
+Add-Migration Initial -Context SqlServerDbContext -OutputDir Migrations/SqlServerDbMigrations
 
 Update-Database -Context SqlServerDbContext
 
 
 PostgreSql
 
-Add-Migration Initial -Context PostgreSqlDbContext -OutputDir PostgreSqlDbMigrations
+Add-Migration Initial -Context PostgreSqlDbContext -OutputDir Migrations/PostgreSqlDbMigrations
 
 Update-Database -Context PostgreSqlDbContext
 
 
 SQLite
 
-Add-Migration Initial -Context SqliteDbContext -OutputDir SqliteDbMigrations
+Add-Migration Initial -Context SqliteDbContext -OutputDir Migrations/SqliteDbMigrations
 
 Update-Database -Context SqliteDbContext
